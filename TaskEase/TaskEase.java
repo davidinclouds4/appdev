@@ -102,29 +102,28 @@ public class TaskEase {
                     break;
 
                 case 5:
-    if (tasks.isEmpty()) {
-        System.out.println("No tasks to edit.");
-    } else {
-        System.out.print("Enter task number to edit: ");
-        int taskNumber = scanner.nextInt();
-        scanner.nextLine();
+                    if (tasks.isEmpty()) {
+                        System.out.println("No tasks to edit.");
+                    } else {
+                        System.out.print("Enter task number to edit: ");
+                        int taskNumber = scanner.nextInt();
+                        scanner.nextLine();
 
-        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
-            System.out.print("Enter new task: ");
-            String newTask = scanner.nextLine();
+                        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+                            System.out.print("Enter new task: ");
+                            String newTask = scanner.nextLine();
 
-            tasks.set(taskNumber - 1, newTask);
+                            tasks.set(taskNumber - 1, newTask);
 
-            System.out.println("Task updated successfully!");
-        } else {
-            System.out.println("Invalid task number.");
-        }
-    }
-    break;
+                            System.out.println("Task updated successfully!");
+                        } else {
+                            System.out.println("Invalid task number.");
+                        }
+                    }
+                    break;
 
-case 6:
-    System.out.println("\nThank you for using TaskEase!");
-    break; System.out.println("\nThank you for using TaskEase!");
+                case 6:
+                    System.out.println("\nThank you for using TaskEase!");
                     break;
 
                 default:
