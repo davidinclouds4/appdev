@@ -23,7 +23,8 @@ public class TaskEase {
             System.out.println("2. View Tasks");
             System.out.println("3. Complete Task");
             System.out.println("4. Delete Task");
-            System.out.println("5. Exit");
+            System.out.println("5. Edit Task");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
 
             choice = scanner.nextInt();
@@ -101,14 +102,36 @@ public class TaskEase {
                     break;
 
                 case 5:
-                    System.out.println("\nThank you for using TaskEase!");
+    if (tasks.isEmpty()) {
+        System.out.println("No tasks to edit.");
+    } else {
+        System.out.print("Enter task number to edit: ");
+        int taskNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+            System.out.print("Enter new task: ");
+            String newTask = scanner.nextLine();
+
+            tasks.set(taskNumber - 1, newTask);
+
+            System.out.println("Task updated successfully!");
+        } else {
+            System.out.println("Invalid task number.");
+        }
+    }
+    break;
+
+case 6:
+    System.out.println("\nThank you for using TaskEase!");
+    break; System.out.println("\nThank you for using TaskEase!");
                     break;
 
                 default:
                     System.out.println("Invalid choice.");
             }
 
-        } while (choice != 5);
+        } while (choice != 6);
 
         scanner.close();
     }
